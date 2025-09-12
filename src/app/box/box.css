@@ -1,0 +1,8 @@
+:host {
+	display: block;
+	width: 200px;
+	height: 200px;
+	user-select: none;
+	padding: 1.5rem;
+	border: solid 0.2rem black;
+}

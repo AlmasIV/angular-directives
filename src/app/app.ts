@@ -1,12 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal, WritableSignal } from '@angular/core';
+import { Box } from "./box/box";
+import { BackgroundRandomizer } from "./directives/background-randomizer";
+import { HideOnDoubleClick } from "./directives/hide-on-double-click";
+import { ClickCount } from "./directives/click-count";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Box, BackgroundRandomizer, HideOnDoubleClick, ClickCount],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('directives');
+  public totalCount: WritableSignal<number> = signal(0);
+  public onCount(count: number): void {
+    this.totalCount.set(count);
+  }
 }
