@@ -7,9 +7,9 @@ export class BackgroundRandomizer {
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
   @HostListener('click')
   public onClick(): void {
-    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', `rgb(${this.getRandomRGBValue()}, ${this.getRandomRGBValue()}, ${this.getRandomRGBValue()})`);
+    this.renderer.setStyle(this.elementRef.nativeElement, 'background-color', `rgb(${this.getRandomByte()}, ${this.getRandomByte()}, ${this.getRandomByte()})`);
   }
-  private getRandomRGBValue() {
-    return Math.floor(Math.random() * (256));
+  private getRandomByte() {
+    return Math.floor(Math.random() * 256);
   }
 }

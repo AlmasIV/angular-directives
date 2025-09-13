@@ -1,11 +1,13 @@
-<app-box appBackgroundRandomizer>
-  <p>Click me to change my background-color.</p>
-</app-box>
+<main>
+  <app-box appBackgroundRandomizer>
+    <p>Click me to change my background-color.</p>
+  </app-box>
+  
+  <app-box appHideOnDoubleClick>
+    <p>Double click me and I will disappear! Double click me again I will apear!</p>
+  </app-box>
 
-<app-box appHideOnDoubleClick>
-  <p>Double click me and I will disappear! Double click me again I will apear!</p>
-</app-box>
-
-<app-box appClickCount (onCountNumberOutput)="onCount($event)">
-  <p>You've clicked me {{totalCount()}}</p>
-</app-box>
+  <app-box appClickCount (onCountNumberOutput)="onCount($event)">
+    <p>You've clicked me {{totalCount()}}</p>
+  </app-box>
+</main>
